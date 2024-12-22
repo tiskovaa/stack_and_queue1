@@ -117,6 +117,7 @@ public:
 		if (p == nullptr)
 			throw bad_alloc();
 		copy(pMem, pMem + sz, p);
+		delete[] pMem;
 		pMem = p;
 		p = nullptr;
 		capacity = newsize * 2 + 2;
